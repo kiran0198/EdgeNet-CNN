@@ -1,0 +1,97 @@
+<div class="snow-container"></div>
+
+<style>
+.snow-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:9999;
+}
+
+.snowflake{
+    position:absolute;
+    top:-20px;
+    color:white;
+    user-select:none;
+    opacity:.9;
+    animation-name:fall;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    text-shadow:
+        0 0 6px rgba(255,255,255,.8),
+        0 0 12px rgba(173,216,230,.6);
+}
+
+@keyframes fall{
+
+    0%{
+        transform:
+            translateY(-20px)
+            translateX(0px)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:
+            translateY(50vh)
+            translateX(20px)
+            rotate(180deg);
+    }
+
+    100%{
+        transform:
+            translateY(105vh)
+            translateX(-30px)
+            rotate(360deg);
+        opacity:0;
+    }
+
+}
+</style>
+
+<script>
+
+const container=document.querySelector(".snow-container");
+
+function createSnow(){
+
+    const snow=document.createElement("div");
+
+    snow.className="snowflake";
+
+    snow.innerHTML="❄";
+
+    snow.style.left=Math.random()*100+"vw";
+
+    snow.style.fontSize=(8+Math.random()*18)+"px";
+
+    snow.style.animationDuration=(5+Math.random()*8)+"s";
+
+    snow.style.animationDelay=(Math.random()*5)+"s";
+
+    container.appendChild(snow);
+
+    setTimeout(()=>{
+        snow.remove();
+    },15000);
+
+}
+
+for(let i=0;i<120;i++){
+
+    createSnow();
+
+}
+
+setInterval(createSnow,200);
+
+</script>

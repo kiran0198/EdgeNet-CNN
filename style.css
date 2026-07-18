@@ -1,0 +1,318 @@
+/* =======================================================
+   EDGENET CNN
+   Glassmorphism + Snow Theme
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------- Background ---------------- */
+
+.stApp{
+
+    background:
+        radial-gradient(circle at top left,#4d7cff22,transparent 30%),
+        radial-gradient(circle at bottom right,#00d4ff22,transparent 30%),
+        linear-gradient(
+            135deg,
+            #07121d 0%,
+            #0b1d2b 50%,
+            #071018 100%
+        );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 18s ease infinite;
+
+    color:white;
+}
+
+/* Hide Streamlit Header */
+
+header{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+#MainMenu{
+    visibility:hidden;
+}
+
+/* ---------------- Hero ---------------- */
+
+.hero{
+
+    text-align:center;
+
+    padding:40px;
+
+    margin-bottom:30px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.35);
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+        0 0 15px #00c8ff,
+        0 0 30px #00c8ff;
+
+}
+
+.hero p{
+
+    color:#d9e7ff;
+
+    font-size:20px;
+
+}
+
+/* ---------------- Upload Box ---------------- */
+
+[data-testid="stFileUploader"]{
+
+    border:2px dashed #4fc3ff;
+
+    border-radius:20px;
+
+    padding:18px;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.4s;
+
+}
+
+[data-testid="stFileUploader"]:hover{
+
+    background:rgba(79,195,255,.12);
+
+    border-color:white;
+
+}
+
+/* ---------------- Images ---------------- */
+
+img{
+
+    border-radius:20px;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.45);
+
+}
+
+/* ---------------- Button ---------------- */
+
+.stButton>button{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #00b4ff,
+        #6f6cff
+    );
+
+    transition:.35s;
+
+}
+
+.stButton>button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 0 20px #00c8ff;
+
+}
+
+/* ---------------- Download ---------------- */
+
+.stDownloadButton>button{
+
+    width:100%;
+
+    border-radius:15px;
+
+    border:none;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    padding:14px;
+
+    background:linear-gradient(
+        90deg,
+        #00d084,
+        #00bfa6
+    );
+
+}
+
+.stDownloadButton>button:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:
+
+        0 0 20px #00ffb3;
+
+}
+
+/* ---------------- Spinner ---------------- */
+
+[data-testid="stSpinner"]{
+
+    color:white;
+
+}
+
+/* ---------------- Cards ---------------- */
+
+.block-container{
+
+    padding-top:2rem;
+
+    padding-bottom:2rem;
+
+}
+
+/* ---------------- Scrollbar ---------------- */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4fc3ff;
+
+    border-radius:20px;
+
+}
+
+/* ---------------- Animation ---------------- */
+
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* ---------------- Floating Glow ---------------- */
+
+.hero{
+
+    animation:floatCard 4s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ---------------- Fade In ---------------- */
+
+img{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0px);
+
+    }
+
+}
